@@ -1,0 +1,25 @@
+{
+  "name": "urbancommute",
+  "version": "1.0.0",
+  "description": "Calculate commute times for bike and public transportation",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastegg/UrbanCommute.git"
+  },
+  "author": "Michael McCarry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fastegg/UrbanCommute/issues"
+  },
+  "homepage": "https://github.com/fastegg/UrbanCommute#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1"
+  }
+}

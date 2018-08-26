@@ -3,5 +3,19 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"public/src/**/*": true,
+			"client/lib/**/*": true,
+			"functions/lib/**/*": true,
+		},
+		"editor.tabSize": 2,
+		
+	}
 }
