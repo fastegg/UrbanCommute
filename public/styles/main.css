@@ -7,3 +7,4 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
 #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
 
+#map { background: #ffffff; width: 90%; height: 450px; margin-left: 5%; margin-bottom: 25px }

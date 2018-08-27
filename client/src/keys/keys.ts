@@ -6,3 +6,5 @@ export const firebaseConfig = {
   storageBucket: "urbancommute-60afa.appspot.com",
   messagingSenderId: "316159024148"
 };
+
+export const googleMapsKey = 'AIzaSyAea8wL6q1gpe23qyUzo4AenW0qPCYsIeo';

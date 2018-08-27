@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 import { firebaseConfig } from './keys/keys';
+import { newMap } from './api/maps';
 
 document.addEventListener('DOMContentLoaded', function() {
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let app = firebase.initializeApp(firebaseConfig, 'UrbanCommute');
     let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
     document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+
+    newMap(document.getElementById('map'), {center: {lat: -25.363, lng: 131.044}, zoom: 4});
   } catch (e) {
     console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
