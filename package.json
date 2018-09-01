@@ -24,6 +24,7 @@
     "gulp": "^3.9.1",
     "gulp-typescript": "^5.0.0-alpha.3",
     "style-loader": "^0.23.0",
+    "svg-react-loader": "^0.4.5",
     "typescript": "^3.0.1",
     "webpack": "^4.17.1"
   },

@@ -13,7 +13,7 @@ gulp.task('ts-client', () => {
 });
 
 gulp.task('copy-css', () => {
-	gulp.src('./client/src/**/*.css').pipe(gulp.dest('client/lib/'));
+	gulp.src('./client/src/**/*.{css,svg,js}').pipe(gulp.dest('client/lib/'));
 });
 
 gulp.task('package-client', ['ts-client', 'copy-css'], (callback) => {
