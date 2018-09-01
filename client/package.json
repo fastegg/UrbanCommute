@@ -8,7 +8,9 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
     "gulp-typescript": "^5.0.0-alpha.3",
+    "style-loader": "^0.23.0",
     "tslint": "~5.8.0",
     "typescript": "~2.8.3",
     "webpack": "^4.17.1"

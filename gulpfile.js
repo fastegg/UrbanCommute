@@ -12,7 +12,11 @@ gulp.task('ts-client', () => {
   return tsResult.js.pipe(gulp.dest('client/lib/'));
 });
 
-gulp.task('package-client', ['ts-client'], (callback) => {
+gulp.task('copy-css', () => {
+	gulp.src('./client/src/**/*.css').pipe(gulp.dest('client/lib/'));
+});
+
+gulp.task('package-client', ['ts-client', 'copy-css'], (callback) => {
   webpack(config, function(err, stats) {
 		if(err) throw new gutil.PluginError('webpack', err);
 		gutil.log('[webpack]', stats.toString({
@@ -23,5 +27,5 @@ gulp.task('package-client', ['ts-client'], (callback) => {
 });
 
 gulp.task('default', ['package-client'], () => {
-  gulp.watch('./client/**/*.ts', ['package-client']);
+  gulp.watch('./client/src/**/*', ['package-client', 'ts-client', 'copy-css']);
 });

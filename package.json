@@ -20,12 +20,15 @@
     "@babel/core": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^5.0.0-alpha.3",
+    "style-loader": "^0.23.0",
     "typescript": "^3.0.1",
     "webpack": "^4.17.1"
   },
   "dependencies": {
-    "google-maps": "^3.3.0"
+    "google-maps": "^3.3.0",
+    "gulp-copy": "^1.1.0"
   }
 }
