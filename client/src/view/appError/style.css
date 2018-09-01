@@ -1,10 +1,24 @@
 .box {
-  width: 300px;
-  height: 300px;
   margin: auto;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  border: 2px;
+  border-style: solid;
+  border-color: aquamarine;
 }
 
 .crashIcon {
   width: 250px;
   height: 250px;
+}
+
+.button {
+  margin: 5px auto 5px auto;
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+  font-size: 110%;
+  font-weight: 700;
+  border-radius: 2px;
 }

@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { box, crashIcon } from './style.css';
+import { box, crashIcon, button } from './style.css';
 import Bikecrash from './images/bikecrash.svg';
-
-console.log(Bikecrash);
+import { Col, Row } from 'components/flex';
 
 export class AppError extends React.Component {
   render() {
-    return (<div className={box}><Bikecrash className={crashIcon} />
-      <div>Oh no, something bad happened!</div>
-    </div>);
+    return (<Col className={box}>
+      <Row><Bikecrash className={crashIcon} /></Row>
+      <Row>Oh no, something bad happened!</Row>
+      <Row><div className={button}>Go Home</div></Row>
+    </Col>);
   }
 }

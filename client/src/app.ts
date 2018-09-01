@@ -6,7 +6,6 @@ import { AppError } from 'view/appError';
 const app = new ReactApp(document.getElementById('appView'));
 
 async function start() {
-  app.mount(AppError);
   try {
     load_firebase();
     this.shouldCrash(); //TODO: REMOVE ME! IT CRASHES!!!!

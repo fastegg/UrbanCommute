@@ -1,6 +1,6 @@
 html { margin: 0; height: 100% }
 body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; height:100%}
-#appView { height: 100%; width: 100%; overflow: auto }
+#appView { height: 100%; width: 100%; overflow: auto; display: flex; display: -webkit-flex; flex-direction: column }
 
 @keyframes ldsEllipsis3 {
   0%, 25% {
