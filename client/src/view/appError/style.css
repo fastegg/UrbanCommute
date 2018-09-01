@@ -3,19 +3,41 @@
   background-color: #ffffff;
   padding: 50px;
   border-radius: 10px;
-  border: 2px;
-  border-style: solid;
-  border-color: aquamarine;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+  color: #757575;
+  justify-content: center;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 700;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .crashIcon {
   width: 250px;
   height: 250px;
+  fill: #757575;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.link :hover {
+  text-decoration: underline;
 }
 
 .button {
   margin: 5px auto 5px auto;
-  background-color: blue;
+  background-color: #4285F4;
   color: white;
   padding: 5px 10px;
   font-size: 110%;

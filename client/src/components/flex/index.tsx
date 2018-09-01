@@ -7,13 +7,13 @@ interface sharedProps {
 
 export class Col extends React.Component<sharedProps> {
   render() {
-    return <div className={`${column} ${this.props.className}`}>{this.props.children}</div>;
+    return <div className={`${column} ${this.props.className || ''}`}>{this.props.children}</div>;
   }
 }
 
 export class Row extends React.Component<sharedProps> {
   render() {
-    return <div className={`${row} ${this.props.className}`}>{this.props.children}</div>
+    return <div className={`${row} ${this.props.className || ''}`}>{this.props.children}</div>
   }
 }
 
