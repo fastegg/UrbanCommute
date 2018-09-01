@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/fastegg/UrbanCommute#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^5.0.0-alpha.3",
     "typescript": "^3.0.1",

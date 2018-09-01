@@ -6,7 +6,8 @@
     "outDir": "lib",
     "sourceMap": true,
     "target": "es6",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "jsx": "react"
   },
   "compileOnSave": true,
   "include": [
