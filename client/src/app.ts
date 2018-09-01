@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
-import { firebaseConfig } from './keys/keys';
-import { newMap } from './api/maps';
+import { firebaseConfig } from 'keys/keys';
+import { newMap } from 'api/maps';
 
 document.addEventListener('DOMContentLoaded', function() {
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥

@@ -32,7 +32,7 @@ module.exports = {
 
     modules: [
       "node_modules",
-      path.resolve(__dirname, "app")
+      path.resolve(__dirname, "lib")
     ],
     // directories where to look for modules
 
