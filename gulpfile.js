@@ -7,8 +7,11 @@ var webpack = require('webpack');
 var config = require('./client/webpack.config');
 
 gulp.task('ts-client', () => {
-  var tsResult = tsClientProject.src().pipe(tsClientProject());
-
+	try {
+		var tsResult = tsClientProject.src().pipe(tsClientProject());
+	} catch(e) {
+		console.log('Error updatings ts');
+	}
   return tsResult.js.pipe(gulp.dest('client/lib/'));
 });
 
