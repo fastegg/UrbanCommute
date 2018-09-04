@@ -1,17 +1,25 @@
 var path = require('path')
 var webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 //var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var assetPath = '/public/js/'
-var absolutePath = path.join(__dirname, 'build', assetPath)
+var absolutePath = path.join(__dirname, 'build', assetPath);
+
+//Used in the HTMLWebpackPlugin
+const htmlOptions = {
+  filename: '../index.html',
+  template: 'client/templates/index.html',
+  title: 'Urban Commute',
+}
 
 module.exports = {
   mode: "development",
   entry: "./client/lib/app.js",
   output: {
     path: path.resolve(__dirname, "../public/src"),
-    filename: "app.js",
-    publicPath: "public/src",
+    filename: "app.[contenthash].js",
+    publicPath: "src",
   },
   module: {
     rules: [
@@ -56,6 +64,9 @@ module.exports = {
     extensions: [".js", ".json", ".jsx", ".css"],
     // extensions that are used
   },
+  plugins: [
+    new HtmlWebpackPlugin(htmlOptions)
+  ]
 }
 /*
 module.exports = {
