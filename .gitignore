@@ -69,3 +69,6 @@ public/src
 
 #ignore .firebase directory
 .firebase
+
+#ignore experimental inner modules
+inner_modules

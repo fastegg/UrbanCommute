@@ -3,7 +3,7 @@ var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 //var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-var assetPath = '/public/js/'
+var assetPath = '/public/js/';
 var absolutePath = path.join(__dirname, 'build', assetPath);
 
 //Used in the HTMLWebpackPlugin
@@ -66,7 +66,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(htmlOptions)
-  ]
+  ],
 }
 /*
 module.exports = {

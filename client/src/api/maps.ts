@@ -1,9 +1,14 @@
 import * as Maps from 'google-maps';
 import { googleMapsKey } from 'keys/keys';
-import { DOMElement } from 'react';
+import { post } from './url';
 
 let gmaps = null;
 let afterload = [];
+
+interface LatLng {
+  lat: number,
+  lng: number,
+};
 
 Maps.KEY = googleMapsKey;
 Maps.VERSION = 'weekly';
@@ -43,4 +48,45 @@ export function getMap(key: string) {
 
 export function unloadMap(key: string) {
   delete liveMaps[key];
+}
+
+export async function requestLocation(): Promise<LatLng> {
+  if (navigator && navigator.geolocation) {
+    return await new Promise<any>((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(pos => {
+        resolve({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+        });
+      });
+    });
+  } else {
+    return await getIPLocation();
+  }
+}
+
+export async function zoomMapToCurrentLocation(mapID): Promise<void> {
+  try {
+    const loc = await requestLocation();
+    const map = liveMaps[mapID];
+
+    if (map) {
+      map.panTo(loc);
+      map.setZoom(15);
+    }
+  } catch(e) {
+    //TODO: Check for permission denied, or log actual error
+  }
+
+}
+
+async function getIPLocation(): Promise<any> {
+  const request = `https://www.googleapis.com/geolocation/v1/geolocate?key=${googleMapsKey}`;
+
+  try {
+    const response = await post(request, {});
+    console.log(response);
+  } catch(e) {
+    console.error(e);
+  }
 }

@@ -8,7 +8,7 @@ export class Home extends React.Component {
   render() {
     return (
       <Col className={FullPage}>
-        <Map mapKey='primary' mapOptions={{center: {lat: -25.363, lng: 131.044}, zoom: 4}} />
+        <Map mapKey='primary' />
         <FloatingMenu>
           <div>Check it out!</div>
         </FloatingMenu>
