@@ -1,0 +1,15 @@
+.searchRow {
+  margin: auto 0 auto 0;
+  padding: 8px 8px 8px 8px;
+  flex-grow: 1;
+}
+
+.align {
+  margin: auto 0 auto 0;
+}
+
+.directionIcon {
+  width: 0.8em;
+  height: 0.8em;
+  margin: auto 15px;
+}

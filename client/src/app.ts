@@ -1,6 +1,5 @@
 import { load as load_firebase } from 'api/firebase';
 import { ReactApp } from 'view';
-import { requestLocation } from 'api/maps';
 import { AppError } from 'view/appError';
 import { Home } from 'view/home';
 

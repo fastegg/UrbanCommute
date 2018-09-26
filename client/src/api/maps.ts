@@ -77,7 +77,6 @@ export async function zoomMapToCurrentLocation(mapID): Promise<void> {
   } catch(e) {
     //TODO: Check for permission denied, or log actual error
   }
-
 }
 
 async function getIPLocation(): Promise<any> {

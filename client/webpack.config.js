@@ -57,6 +57,7 @@ module.exports = {
 
     modules: [
       "node_modules",
+      path.resolve(__dirname, "lib/node_modules"),
       path.resolve(__dirname, "lib"),
     ],
     // directories where to look for modules

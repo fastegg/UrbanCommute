@@ -1,0 +1,21 @@
+.style {
+  border: none;
+  border-bottom: 1px solid white;
+  width: 100%;
+  margin: 5px 10px 5px 10px;
+  padding: 2px 0px 2px 0px;
+  font-size: 15px;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+}
+
+.style:hover {
+  border-bottom: 1px solid grey;
+}
+
+.style:active, .style:focus {
+  border-bottom: 1px solid black;
+  outline: none;
+}
