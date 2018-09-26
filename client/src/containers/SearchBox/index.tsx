@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PlaceIcon from '@material-ui/icons/Place';
 import LocationIcon from '@material-ui/icons/LocationSearching';
-import { TextEntry } from 'components/styled/TextEntry';
+import SwapIcon from '@material-ui/icons/SwapVert';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { cyan, deepOrange } from '@material-ui/core/colors';
 import { Row, Col } from 'components/flex';
@@ -37,9 +37,12 @@ export class SearchBox extends React.Component {
             </div>
           </Row>
           <Row>
-            <Col>
+            <Col flexGrow={1}>
               <Row><LocationIcon className={ directionIcon } /><SearchField id="from" /></Row>
               <Row><PlaceIcon className={ directionIcon } /><SearchField id="to" /></Row>
+            </Col>
+            <Col>
+              <SwapIcon className={ directionIcon } />
             </Col>
           </Row>
         </AppBar>
