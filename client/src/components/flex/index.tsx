@@ -4,12 +4,12 @@ import { column, row } from './style.css';
 interface sharedProps {
   className?: string;
   style?: any;
-  flexGrow?: number;
+  grow?: number;
 }
 
 function styleObj(props: sharedProps) {
-  if (props.flexGrow) {
-    return {flexGrow: props.flexGrow};
+  if (props.grow) {
+    return {flexGrow: props.grow};
   }
   return null;
 }

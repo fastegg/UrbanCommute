@@ -7,7 +7,7 @@ type SearchFieldProps = {
   id: string;
   placeholder?: string;
   className?: string;
-  onPlaceChanged?: (place: any) => void
+  onPlaceChanged?: (place: any) => void;
 }
 
 export class SearchField extends Component<SearchFieldProps> {
@@ -24,7 +24,7 @@ export class SearchField extends Component<SearchFieldProps> {
   }
 
   componentDidMount() {
-    afterLoad(() => { 
+    afterLoad(() => {
       this.autoComplete = mountAutoComplete(this.ref, {types: ['address']});
       this.autoComplete.addListener('place_changed', this.placeChanged);
       this.autoComplete.setFields(['place_id']);

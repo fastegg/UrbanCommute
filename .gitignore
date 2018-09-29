@@ -66,6 +66,7 @@ client/lib
 
 # build dir for webpack
 public/src
+public/index.html
 
 #ignore .firebase directory
 .firebase

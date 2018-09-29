@@ -45,7 +45,7 @@ export class SearchBox extends React.Component<{}, SearchState> {
             </div>
           </Row>
           <Row className={ inputRow }>
-            <Col flexGrow={1}>
+            <Col grow={1}>
               <Row>
                 <LocationIcon className={ directionIcon } />
                 <SearchField className={textField} onPlaceChanged={ this.onPlaceChanged.bind(this, 'origin') } id='from' placeholder='Choose starting point...' />
