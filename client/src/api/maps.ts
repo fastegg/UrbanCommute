@@ -1,8 +1,9 @@
 import * as Maps from 'google-maps';
 import { googleMapsKey } from 'keys/keys';
-import { post } from './url';
+import { post, get } from './url';
 
 let gmaps = null;
+let gPlaceService = null;
 let afterload = [];
 
 interface LatLng {
@@ -12,6 +13,7 @@ interface LatLng {
 
 Maps.KEY = googleMapsKey;
 Maps.VERSION = 'weekly';
+Maps.LIBRARIES = ['places']
 Maps.load((g) => {
   gmaps = g.maps;
 
@@ -22,6 +24,10 @@ Maps.load((g) => {
 });
 
 const liveMaps = {};
+
+export function afterLoad(func: () => void, ...args) {
+  afterload.push(Array.from(arguments));
+}
 
 export function newMap(key: string, el: Element, options) {
   if (!gmaps) {
@@ -34,6 +40,10 @@ export function newMap(key: string, el: Element, options) {
   }
 
   liveMaps[key] = new gmaps.Map(el, options);
+
+  if (!gPlaceService) {
+    gPlaceService = new gmaps.places.PlacesService(liveMaps[key]);
+  }
 
   return liveMaps[key];
 };
@@ -84,6 +94,33 @@ async function getIPLocation(): Promise<any> {
 
   try {
     const response = await post(request, {});
+    console.log(response);
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+const gSessionToken = 'testingSessions';
+
+export function mountAutoComplete(inputElm, options?) {
+  return new gmaps.places.Autocomplete(inputElm, options);
+}
+
+export async function getPlacesDetails(placeID: string) {
+  return new Promise((resolve, reject) => {
+    gPlaceService.getDetails({placeId: placeID, fields: ['name', 'geometry']}, (resp, err) => {
+      if (err && err !== 'OK') { return reject(err) }
+      resolve(resp);
+    });
+  });
+  
+}
+
+export async function getPlaceAutoComplete(text): Promise<any> {
+  const request = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${googleMapsKey}&input=${encodeURI(text)}&sessionToken=${gSessionToken}`
+
+  try {
+    const response = await get(request);
     console.log(response);
   } catch(e) {
     console.error(e);

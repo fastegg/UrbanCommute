@@ -23,6 +23,7 @@
     "@types/react-dom": "^16.0.7",
     "firebase": "^5.4.1",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "google-maps": "^3.3.0"
   }
 }

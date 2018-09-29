@@ -1,21 +1,39 @@
 import * as React from 'react';
 import Component from 'Component';
 import { TextField } from '@material-ui/core';
-import { textEntry } from './style.css';
+import { mountAutoComplete, afterLoad, getPlacesDetails } from 'api/maps';
 
-export class SearchField extends Component<{id: string}> {
-  private curTimeout: number;
-  private lastKnownValue: string;
-  onChange = ({target}) => {
-    this.lastKnownValue = target.value;
-    this.curTimeout = this.curTimeout || this.setTimeout(() => {
-      console.log(this.lastKnownValue);
-      this.curTimeout = 0;
-    }, 500);
+type SearchFieldProps = {
+  id: string;
+  placeholder?: string;
+  className?: string;
+  onPlaceChanged?: (place: any) => void
+}
+
+export class SearchField extends Component<SearchFieldProps> {
+  private ref: Element;
+  private autoComplete: any;
+
+  placeChanged = async () => {
+    const placeDetails = await getPlacesDetails(this.autoComplete.getPlace().place_id);
+    this.props.onPlaceChanged && this.props.onPlaceChanged(placeDetails);
   }
+
+  onCatchError(e, details) {
+    console.error(e, details);
+  }
+
+  componentDidMount() {
+    afterLoad(() => { 
+      this.autoComplete = mountAutoComplete(this.ref, {types: ['address']});
+      this.autoComplete.addListener('place_changed', this.placeChanged);
+      this.autoComplete.setFields(['place_id']);
+    });
+  }
+
   render() {
     return (
-      <TextField id={this.props.id} onChange={this.onChange} className={ textEntry } />
+      <TextField {...this.props} inputRef={(ref) => {this.ref = ref}} />
     )
   }
 }
