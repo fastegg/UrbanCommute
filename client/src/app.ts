@@ -2,6 +2,7 @@ import { load as load_firebase } from 'api/firebase';
 import { ReactApp } from 'view';
 import { AppError } from 'view/appError';
 import { Home } from 'view/home';
+import 'nav/navigation';
 
 const app = new ReactApp(document.getElementById('appView'));
 
