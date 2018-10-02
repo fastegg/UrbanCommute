@@ -4,7 +4,7 @@
     "lint": "tslint --project tsconfig.json",
     "build": "tsc"
   },
-  "main": "lib/index.js",
+  "main": "lib/app.js",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.0",

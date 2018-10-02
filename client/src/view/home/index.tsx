@@ -4,6 +4,7 @@ import { FloatingMenu } from 'components/floatingMenu';
 import { Row, Col } from 'components/flex';
 import { FullPage } from './style.css';
 import { SearchBox } from 'containers/SearchBox';
+import { Link } from 'components/Link';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { blue, cyan, deepOrange } from '@material-ui/core/colors';
@@ -27,6 +28,8 @@ export class Home extends React.Component {
             <Row>
               <SearchBox />
             </Row>
+            <Link location={['home']}>Go Home</Link>
+            <Link location='http://www.google.com/'>Go to Google</Link>
           </FloatingMenu>
         </Col>
       </MuiThemeProvider>
