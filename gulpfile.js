@@ -16,12 +16,13 @@ gulp.task('ts-clean', () => {
 });
 
 gulp.task('ts-client', ['ts-clean'], () => {
-	try {
-		var tsResult = tsClientProject.src().pipe(tsClientProject());
-	} catch(e) {
-		console.log('Error updatings ts');
-	}
-  return tsResult.js.pipe(gulp.dest('client/lib/'));
+	const tsResult = tsClientProject.src().pipe(tsClientProject());
+
+	tsResult.on('error', (e) => {
+		gutil.log('[typescript]', e);
+	});
+	
+	return tsResult.js.pipe(gulp.dest('client/lib/'));
 });
 
 gulp.task('copy-css', ['ts-clean'], () => {
