@@ -32,8 +32,14 @@ export class SearchField extends Component<SearchFieldProps> {
   }
 
   render() {
+    const props = {
+      ...this.props,
+    };
+
+    delete props.onPlaceChanged;
+
     return (
-      <TextField {...this.props} inputRef={(ref) => {this.ref = ref}} />
+      <TextField { ...props } inputRef={(ref) => {this.ref = ref}} />
     )
   }
 }
