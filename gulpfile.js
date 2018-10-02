@@ -19,6 +19,7 @@ gulp.task('ts-client', ['ts-clean'], () => {
 	const tsResult = tsClientProject.src().pipe(tsClientProject());
 
 	tsResult.on('error', (e) => {
+		//This is a hack until an upgrade is done to Gulp 4 (git issue #1)
 		gutil.log('[typescript]', e);
 	});
 	
